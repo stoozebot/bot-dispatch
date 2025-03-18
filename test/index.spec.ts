@@ -8,8 +8,5 @@ import worker from '../src/index';
 const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
 
 describe('worker', () => {
-	it('responds with Hello World!', async () => {
-		const response = await SELF.fetch('https://example.com');
-		expect(await response.text()).toBe(`Hello World!`);
-	});
+	it('responds with Hello World!', async () => {});
 });

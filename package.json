@@ -6,7 +6,8 @@
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev --port 8080",
 		"start": "wrangler dev --port 8080 --remote",
-		"test": "vitest",
+		"test": "vitest run",
+		"test-w": "vitest",
 		"cf-typegen": "wrangler types"
 	},
 	"devDependencies": {
