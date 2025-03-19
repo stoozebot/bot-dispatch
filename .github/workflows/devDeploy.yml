@@ -34,7 +34,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy > NUL 2>&1
+          command: deploy > /dev/null 2>&1
           secrets: |
             API_KEY
         env:
