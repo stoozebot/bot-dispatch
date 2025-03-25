@@ -36,8 +36,10 @@ export default {
 
 async function POST(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 	const url = new URL(request.url);
+
 	if (url.pathname.includes('/update-trigger')) {
 		const key = ((await request.json()) as { key: string }).key;
+
 		if (!key) {
 			return new Response('Bad Request', { status: 400 });
 		}
@@ -49,7 +51,7 @@ async function POST(request: Request, env: Env, ctx: ExecutionContext): Promise<
 			return new Response('Oops! something went wrong.', { status: 400 });
 		}
 
-		if (updates.length) return new Response('Not found', { status: 404 });
+		if (!updates.length) return new Response('Not found', { status: 404 });
 
 		console.log(key);
 		console.log(updates);
